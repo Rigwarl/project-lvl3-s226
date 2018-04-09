@@ -4,6 +4,8 @@
   node_js:
     - stable
     
+  script: make lint test
+    
   addons:
     code_climate:
       repo_token: df73b354eaa530c1f41ae0bfd56cc6ed5aa41b5f93c77a612ffefd1bde2d23eb
