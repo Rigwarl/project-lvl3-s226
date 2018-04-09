@@ -1,4 +1,4 @@
-import getHello from '../src/index';
+import getHello from '../src';
 
 test('hello world', () => {
   expect(getHello()).toEqual('Hello World!');
