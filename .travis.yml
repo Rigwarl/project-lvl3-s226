@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - stable
+  
+addons:
+  code_climate:
+    repo_token: df73b354eaa530c1f41ae0bfd56cc6ed5aa41b5f93c77a612ffefd1bde2d23eb
+
+  after_success:
+    - npm install -g istanbul
+    - npm install -g codeclimate-test-reporter
+    - istanbul cover node_modules/jest/bin/jest.js -- --coverage
+    - codeclimate-test-reporter < ./coverage/lcov.info
+  
