@@ -13,3 +13,7 @@ start:
 build:
 	rm -rf dist
 	NODE_ENV=production npm run webpack
+	
+deploy:
+	make build
+	npm run surge -- --domain rigwarl-ssh.surge.sh ./dist
