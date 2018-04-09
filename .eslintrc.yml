@@ -1,0 +1,14 @@
+---
+plugins: [jest]
+
+env:
+  jest/globals: true
+  node: true
+  browser: true
+
+extends:
+  - 'airbnb-base'
+  - 'plugin:jest/recommended'
+
+rules:
+  no-console: 0

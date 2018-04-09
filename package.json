@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "simple rss reader",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "eslint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -14,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Rigwarl/project-lvl3-s226/issues"
   },
-  "homepage": "https://github.com/Rigwarl/project-lvl3-s226#readme"
+  "homepage": "https://github.com/Rigwarl/project-lvl3-s226#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0"
+  }
 }
