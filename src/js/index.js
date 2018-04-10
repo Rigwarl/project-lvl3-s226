@@ -42,7 +42,8 @@ const init = () => {
 
     axios.get(`https://crossorigin.me/${state.url}`)
       .then(({ data }) => {
-        const feed = parseRss(data);
+        const rss = parseRss(data);
+        const feed = { ...rss, url: state.url };
 
         updateState({
           url: '',
