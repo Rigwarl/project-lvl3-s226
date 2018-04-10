@@ -1,6 +1,6 @@
 import isURL from 'validator/lib/isURL';
 
-const validateUrl = (url, existsMap) => {
+const validateUrl = (url, existUrls) => {
   if (url === '') {
     return {
       valid: false,
@@ -15,7 +15,7 @@ const validateUrl = (url, existsMap) => {
     };
   }
 
-  if (existsMap.has(url)) {
+  if (!existUrls.includes(url)) {
     return {
       valid: false,
       error: 'This URL already exists.',

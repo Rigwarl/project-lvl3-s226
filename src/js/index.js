@@ -5,14 +5,31 @@ import axios from 'axios';
 import parseRss from './parse-rss';
 import renderRss from './render-rss';
 import validateUrl from './validate-url';
-import bindFormEvents from './bind-form-events';
+import updateForm from './update-form';
 
 const init = () => {
-  const rssMap = new Map();
+  const state = {
+    feeds: [],
+    valid: true,
+    value: '',
+    error: '',
+  };
+
+  const updateState = newState => Object.assign(state, newState);
+
   const $form = $('#rss-form');
   const $list = $('#rss-list');
 
-  const addRssUrl = (url) => {
+  $form.on('input', (e) => {
+    const urls = state.feeds.map(({ url }) => url);
+    const { value } = e.target;
+    const { valid, error } = validateUrl(value, urls);
+
+    updateState({ value, valid, error });
+    updateForm($form, state);
+  });
+
+  const addUrl = (url) => {
     rssMap.set(url, { loading: true });
 
     axios.get(`https://crossorigin.me/${url}`)
@@ -31,12 +48,6 @@ const init = () => {
         rssMap.delete(url);
       });
   };
-
-  bindFormEvents({
-    $form,
-    onSubmit: addRssUrl,
-    validateUrl: url => validateUrl(url, rssMap),
-  });
 };
 
 init();
