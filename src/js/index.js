@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import axios from 'axios';
+import bindFormEvents from './bind-form-events';
 import checkUrl from './check-url';
-import createFormController from './create-form-controller';
 
 const init = () => {
   const proxy = 'https://crossorigin.me';
@@ -15,7 +15,7 @@ const init = () => {
       .then(res => console.log(res));
   };
 
-  createFormController({
+  bindFormEvents({
     form,
     onSubmit: addRss,
     checkUrl: url => checkUrl(url, rssMap),

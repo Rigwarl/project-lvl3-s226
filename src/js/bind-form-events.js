@@ -4,7 +4,7 @@ const errors = {
   invalid: 'Invalid URL',
 };
 
-const createFormController = ({ form, checkUrl, onSubmit }) => {
+const bindFormEvents = ({ form, checkUrl, onSubmit }) => {
   const urlInput = form.find('[name=rss-url]');
   const urlError = urlInput.next('.invalid-feedback');
 
@@ -31,4 +31,4 @@ const createFormController = ({ form, checkUrl, onSubmit }) => {
   });
 };
 
-export default createFormController;
+export default bindFormEvents;
