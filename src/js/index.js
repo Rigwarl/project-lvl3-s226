@@ -1,9 +1,9 @@
 import $ from 'jquery';
 import axios from 'axios';
 
-import bindFormEvents from './bind-form-events';
-import checkUrl from './check-url';
 import parseRss from './parse-rss';
+import validateUrl from './validate-url';
+import bindFormEvents from './bind-form-events';
 
 const init = () => {
   const rssMap = new Map();
@@ -19,7 +19,7 @@ const init = () => {
   bindFormEvents({
     $form,
     onSubmit: addRss,
-    checkUrl: url => checkUrl(url, rssMap),
+    validateUrl: url => validateUrl(url, rssMap),
   });
 };
 

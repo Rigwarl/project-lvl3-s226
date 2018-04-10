@@ -1,32 +1,25 @@
-const errors = {
-  empty: 'Empty URL',
-  exists: 'This URL already exists.',
-  invalid: 'Invalid URL',
-};
-
-const bindFormEvents = ({ $form, checkUrl, onSubmit }) => {
+const bindFormEvents = ({ $form, validateUrl, onSubmit }) => {
   const $urlInput = $form.find('[name=rss-url]');
   const $urlError = $urlInput.next('.invalid-feedback');
 
   $urlInput.on('input', () => {
-    const result = checkUrl($urlInput.val());
+    const val = $urlInput.val();
+    const { valid, errorMessage } = validateUrl(val);
+    const method = valid ? 'removeClass' : 'addClass';
 
-    if (result === 'ok') {
-      $urlInput.removeClass('is-invalid');
-    } else {
-      $urlInput.addClass('is-invalid');
-      $urlError.text(errors[result]);
-    }
+    $urlInput[method]('is-invalid');
+    $urlError.text(errorMessage);
   });
 
   $form.on('submit', (e) => {
     e.preventDefault();
 
-    const result = checkUrl($urlInput.val());
+    const val = $urlInput.val();
+    const { valid } = validateUrl(val);
 
-    if (result === 'ok') {
-      onSubmit($urlInput.val());
+    if (valid) {
       $urlInput.val('');
+      onSubmit(val);
     }
   });
 };
