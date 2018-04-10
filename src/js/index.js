@@ -1,7 +1,9 @@
 import $ from 'jquery';
 import axios from 'axios';
+
 import bindFormEvents from './bind-form-events';
 import checkUrl from './check-url';
+import parseRss from './parse-rss';
 
 const init = () => {
   const proxy = 'https://crossorigin.me';
@@ -12,6 +14,7 @@ const init = () => {
   const addRss = (url) => {
     rssMap.set(url, []);
     axios.get(`${proxy}/${url}`)
+      .then(res => parseRss(res.data))
       .then(res => console.log(res));
   };
 
