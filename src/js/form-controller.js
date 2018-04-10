@@ -1,4 +1,4 @@
-const messages = {
+const errors = {
   empty: 'Empty URL',
   exists: 'This URL already exists.',
   invalid: 'Invalid URL',
@@ -15,7 +15,7 @@ const createFormController = ({ form, checkUrl, onSubmit }) => {
       urlInput.removeClass('is-invalid');
     } else {
       urlInput.addClass('is-invalid');
-      urlError.text(messages[result]);
+      urlError.text(errors[result]);
     }
   });
 
