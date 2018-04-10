@@ -33,10 +33,6 @@ const init = () => {
   $form.on('submit', (e) => {
     e.preventDefault();
 
-    if (state.disabled) {
-      return;
-    }
-
     updateState({ disabled: true });
     updateForm($form, state);
 
@@ -57,7 +53,6 @@ const init = () => {
         console.error(err);
 
         updateState({
-          valid: false,
           disabled: false,
           error: 'Loading error, try again later',
         });

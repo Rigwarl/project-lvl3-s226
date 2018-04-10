@@ -5,12 +5,13 @@ const updateForm = ($form, {
   const $urlError = $urlInput.next('.invalid-feedback');
   const $submitBtn = $form.find('[type=submit]');
 
-  $urlInput.val(url);
-  $urlError.text(error);
-  $urlInput.addClass(valid ? 'is-valid' : 'is-invalid');
-  $urlInput.removeClass(valid ? 'is-invalid' : 'is-valid');
-  $submitBtn.prop('disabled', disabled);
+  // check error field for network errors too
+  $urlInput.addClass(error ? 'is-invalid' : 'is-valid');
+  $urlInput.removeClass(error ? 'is-valid' : 'is-invalid');
   $urlInput.prop('disabled', disabled);
+  $submitBtn.prop('disabled', disabled || !valid);
+  $urlError.text(error);
+  $urlInput.val(url);
 };
 
 export default updateForm;
