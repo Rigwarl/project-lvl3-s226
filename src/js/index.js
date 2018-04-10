@@ -54,7 +54,7 @@ const init = () => {
 
         updateState({
           disabled: false,
-          error: 'Loading error, try again later',
+          error: 'Loading error, check url',
         });
         updateForm($form, state);
       });
