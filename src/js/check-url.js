@@ -1,6 +1,6 @@
 import isURL from 'validator/lib/isURL';
 
-const validateUrl = (url, existsMap) => {
+const checkUrl = (url, existsMap) => {
   if (url === '') {
     return 'empty';
   }
@@ -16,4 +16,4 @@ const validateUrl = (url, existsMap) => {
   return 'ok';
 };
 
-export default validateUrl;
+export default checkUrl;

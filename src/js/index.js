@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import axios from 'axios';
-import checkUrl from './url-checker';
-import createFormController from './form-controller';
+import checkUrl from './check-url';
+import createFormController from './create-form-controller';
 
 const init = () => {
   const proxy = 'https://crossorigin.me';
