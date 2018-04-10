@@ -7,7 +7,7 @@ const init = () => {
   const proxy = 'https://crossorigin.me';
   const rssMap = new Map();
 
-  const form = $('#rss-form');
+  const $form = $('#rss-form');
 
   const addRss = (url) => {
     rssMap.set(url, []);
@@ -16,7 +16,7 @@ const init = () => {
   };
 
   bindFormEvents({
-    form,
+    $form,
     onSubmit: addRss,
     checkUrl: url => checkUrl(url, rssMap),
   });
