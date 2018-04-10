@@ -18,7 +18,7 @@ const validateUrl = (url, existUrls) => {
   if (existUrls.includes(url)) {
     return {
       valid: false,
-      error: 'This URL already exists.',
+      error: 'This URL already exists',
     };
   }
 

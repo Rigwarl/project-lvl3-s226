@@ -10,9 +10,10 @@ import updateForm from './update-form';
 const init = () => {
   const state = {
     feeds: [],
+    disabled: false,
     valid: true,
-    value: '',
     error: '',
+    url: '',
   };
 
   const updateState = newState => Object.assign(state, newState);
@@ -22,32 +23,46 @@ const init = () => {
 
   $form.on('input', (e) => {
     const urls = state.feeds.map(({ url }) => url);
-    const { value } = e.target;
-    const { valid, error } = validateUrl(value, urls);
+    const url = e.target.value;
+    const { valid, error } = validateUrl(url, urls);
 
-    updateState({ value, valid, error });
+    updateState({ url, valid, error });
     updateForm($form, state);
   });
 
-  const addUrl = (url) => {
-    rssMap.set(url, { loading: true });
+  $form.on('submit', (e) => {
+    e.preventDefault();
 
-    axios.get(`https://crossorigin.me/${url}`)
+    if (state.disabled) {
+      return;
+    }
+
+    updateState({ disabled: true });
+    updateForm($form, state);
+
+    axios.get(`https://crossorigin.me/${state.url}`)
       .then(({ data }) => {
         const feed = parseRss(data);
-        const oldRssArr = Array.from(rssMap.values())
-          .filter(({ loading }) => !loading)
-          .reverse();
 
-        rssMap.set(url, feed);
-        renderRss($list, [feed, ...oldRssArr]);
+        updateState({
+          url: '',
+          disabled: false,
+          feeds: [feed, ...state.feeds],
+        });
+        renderRss($list, state.feeds);
+        updateForm($form, state);
       })
       .catch((err) => {
         console.error(err);
 
-        rssMap.delete(url);
+        updateState({
+          valid: false,
+          disabled: false,
+          error: 'Loading error, try again later',
+        });
+        updateForm($form, state);
       });
-  };
+  });
 };
 
 init();
