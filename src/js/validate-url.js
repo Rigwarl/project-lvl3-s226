@@ -4,27 +4,27 @@ const validateUrl = (url, existsMap) => {
   if (url === '') {
     return {
       valid: false,
-      errorMessage: 'Empty URL',
+      error: 'Empty URL',
     };
   }
 
   if (!isURL(url)) {
     return {
       valid: false,
-      errorMessage: 'Invalid URL',
+      error: 'Invalid URL',
     };
   }
 
   if (existsMap.has(url)) {
     return {
       valid: false,
-      errorMessage: 'This URL already exists.',
+      error: 'This URL already exists.',
     };
   }
 
   return {
     valid: true,
-    errorMessage: '',
+    error: '',
   };
 };
 
