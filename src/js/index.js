@@ -6,14 +6,12 @@ import checkUrl from './check-url';
 import parseRss from './parse-rss';
 
 const init = () => {
-  const proxy = 'https://crossorigin.me';
   const rssMap = new Map();
-
   const $form = $('#rss-form');
 
   const addRss = (url) => {
     rssMap.set(url, []);
-    axios.get(`${proxy}/${url}`)
+    axios.get(`https://crossorigin.me/${url}`)
       .then(res => parseRss(res.data))
       .then(res => console.log(res));
   };
