@@ -16,7 +16,7 @@ const parseRss = (string) => {
 
   return {
     title: $xml.find('channel > title').text(),
-    description: $xml.find('channel > title').text(),
+    description: $xml.find('channel > description').text(),
     items: $xml.find('channel > item').get().map(parseItem),
   };
 };
