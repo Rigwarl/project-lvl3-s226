@@ -22,9 +22,9 @@ const init = () => {
   const $list = $('#rss-list');
 
   $form.on('input', (e) => {
-    const urls = state.feeds.map(({ url }) => url);
+    const existUrls = state.feeds.map(({ url }) => url);
     const url = e.target.value;
-    const { valid, error } = validateUrl(url, urls);
+    const { valid, error } = validateUrl(url, existUrls);
 
     updateState({ url, valid, error });
     updateForm($form, state);
