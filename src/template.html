@@ -7,10 +7,9 @@
   <title>RSS Reader</title>
 </head>
 <body>
-  <div class="container pt-5">
+  <div class="container pt-md-5 pb-md-5">
     <div class="jumbotron">
-      <h1 class="display-4">RSS Reader</h1>
-      <p class="lead">Type RSS URL and hit "Add RSS" button, simple!</p>
+      <h1>RSS Reader</h1>
       <hr class="my-4">
       <form class="row" id="rss-form">
         <div class="form-group col-md-6">
@@ -19,10 +18,12 @@
           <div class="invalid-feedback">Example invalid feedback text</div>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Add RSS</button>
+          <button type="submit" class="btn btn-primary">Load RSS</button>
         </div>
       </form>
     </div>
+    
+    <div class="row" id="rss-list"></div>
   </div>
 </body>
 </html>
