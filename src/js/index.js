@@ -49,7 +49,8 @@ const init = () => {
 
         updateState({
           urlValue: '',
-          urlError: '',
+          urlValid: false,
+          formError: '',
           formDisabled: false,
           feeds: [feed, ...state.feeds],
         });
