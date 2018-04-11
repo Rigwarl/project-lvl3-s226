@@ -17,3 +17,7 @@ build:
 deploy:
 	make build
 	npm run surge -- --domain rigwarl-ssh.surge.sh ./dist
+	
+docs:
+	make build
+	cp -R dist docs
