@@ -5,9 +5,13 @@ const updateForm = ($form, {
   const $urlError = $urlInput.next('.invalid-feedback');
   const $submitBtn = $form.find('[type=submit]');
 
-  // check error field for network errors too
-  $urlInput.addClass(formError ? 'is-invalid' : 'is-valid');
-  $urlInput.removeClass(formError ? 'is-valid' : 'is-invalid');
+  // check formError for network errors too
+  const inputValidClass = (!formError && urlValid) ? 'is-valid' : '';
+  const inputInValidClass = formError ? 'is-invalid' : '';
+
+  $urlInput.removeClass(['is-valid', 'is-invalid']);
+  $urlInput.addClass(inputValidClass);
+  $urlInput.addClass(inputInValidClass);
   $urlInput.prop('disabled', formDisabled);
   $submitBtn.prop('disabled', formDisabled || !urlValid);
   $urlError.text(formError);

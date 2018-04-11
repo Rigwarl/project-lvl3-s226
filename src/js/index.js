@@ -11,7 +11,7 @@ const init = () => {
   const state = {
     feeds: [],
     urlValue: '',
-    urlValid: true,
+    urlValid: false,
     formError: '',
     formDisabled: false,
   };
@@ -20,6 +20,8 @@ const init = () => {
 
   const $form = $('#rss-form');
   const $list = $('#rss-list');
+
+  updateForm($form, state);
 
   $form.on('input', (e) => {
     const existUrls = state.feeds.map(({ url }) => url);
