@@ -11,8 +11,8 @@ const init = () => {
   const state = {
     feeds: [],
     feedUrl: '',
-    formStatus: 'empty', // empty|error|valid|disabled
-    formError: '',
+    feedError: '',
+    feedStatus: 'empty', // empty|error|valid|loading
   };
 
   const $form = $('#rss-form');
@@ -20,13 +20,13 @@ const init = () => {
 
   const updateState = newState => Object.assign(state, newState);
 
-  const validateForm = () => {
+  const validateFeed = () => {
     const existUrls = state.feeds.map(({ url }) => url);
     const { valid, error } = validateUrl(state.feedUrl, existUrls);
 
     updateState({
-      formStatus: valid ? 'valid' : 'error',
-      formError: error,
+      feedStatus: valid ? 'valid' : 'error',
+      feedError: error,
     });
   };
 
@@ -37,8 +37,8 @@ const init = () => {
 
       updateState({
         feedUrl: '',
-        formError: '',
-        formStatus: 'empty',
+        feedError: '',
+        feedStatus: 'empty',
         feeds: [feed, ...state.feeds],
       });
       updateRss($list, state.feeds);
@@ -48,25 +48,25 @@ const init = () => {
       console.error(err);
 
       updateState({
-        formStatus: 'error',
-        formError: 'Loading error, check url or try again later',
+        feedStatus: 'error',
+        feedError: 'Loading error, check url or try again later',
       });
       updateForm($form, state);
     });
 
   $form.on('input', (e) => {
     updateState({ feedUrl: e.target.value });
-    validateForm();
+    validateFeed();
     updateForm($form, state);
   });
 
   $form.on('submit', (e) => {
     e.preventDefault();
 
-    validateForm();
+    validateFeed();
 
-    if (state.formStatus === 'valid') {
-      updateState({ formStatus: 'disabled' });
+    if (state.feedStatus === 'valid') {
+      updateState({ feedStatus: 'loading' });
       loadFeed();
     }
 

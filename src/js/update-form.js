@@ -1,22 +1,22 @@
-const updateForm = ($form, { formStatus, formError, feedUrl }) => {
+const updateForm = ($form, { feedStatus, feedError, feedUrl }) => {
   const $urlInput = $form.find('[name=url]');
   const $urlError = $urlInput.next('.invalid-feedback');
   const $submitBtn = $form.find('[type=submit]');
 
   const inputClassName = {
-    disabled: '',
+    loading: '',
     empty: '',
     valid: 'is-valid',
     error: 'is-invalid',
-  }[formStatus];
+  }[feedStatus];
 
   $urlInput.removeClass(['is-valid', 'is-invalid']);
   $urlInput.addClass(inputClassName);
 
-  $urlInput.prop('disabled', formStatus === 'disabled');
-  $submitBtn.prop('disabled', formStatus === 'disabled');
+  $urlInput.prop('disabled', feedStatus === 'loading');
+  $submitBtn.prop('disabled', feedStatus === 'loading');
 
-  $urlError.text(formError);
+  $urlError.text(feedError);
   $urlInput.val(feedUrl);
 };
 
