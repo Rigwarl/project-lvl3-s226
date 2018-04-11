@@ -12,8 +12,8 @@ const init = () => {
     feeds: [],
     formDisabled: false,
     formValid: true,
-    formValue: '',
-    formError: '',
+    formUrlValue: '',
+    formUrlError: '',
   };
 
   const updateState = newState => Object.assign(state, newState);
@@ -27,9 +27,9 @@ const init = () => {
     const { valid, error } = validateUrl(value, existUrls);
 
     updateState({
-      formValue: value,
       formValid: valid,
-      formError: error,
+      formUrlValue: value,
+      formUrlError: error,
     });
     updateForm($form, state);
   });
@@ -40,13 +40,13 @@ const init = () => {
     updateState({ formDisabled: true });
     updateForm($form, state);
 
-    axios.get(`https://crossorigin.me/${state.formValue}`)
+    axios.get(`https://crossorigin.me/${state.formUrlValue}`)
       .then(({ data }) => {
         const rss = parseRss(data);
-        const feed = { ...rss, url: state.formValue };
+        const feed = { ...rss, url: state.formUrlValue };
 
         updateState({
-          formValue: '',
+          formUrlValue: '',
           formDisabled: false,
           feeds: [feed, ...state.feeds],
         });
@@ -58,7 +58,7 @@ const init = () => {
 
         updateState({
           formDisabled: false,
-          formError: 'Loading error, check url or try again later',
+          formUrlError: 'Loading error, check url or try again later',
         });
         updateForm($form, state);
       });
