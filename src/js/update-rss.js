@@ -1,4 +1,4 @@
-const renderRss = ($element, rssArr) => {
+const updateRss = ($element, rssArr) => {
   const tabs = rssArr.map((feed, i) =>
     `<a 
       class="list-group-item list-group-item-action ${i === 0 ? 'active' : ''}"
@@ -24,4 +24,4 @@ const renderRss = ($element, rssArr) => {
   `);
 };
 
-export default renderRss;
+export default updateRss;

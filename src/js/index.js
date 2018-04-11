@@ -3,70 +3,77 @@ import $ from 'jquery';
 import axios from 'axios';
 
 import parseRss from './parse-rss';
-import renderRss from './render-rss';
+import updateRss from './update-rss';
 import validateUrl from './validate-url';
 import updateForm from './update-form';
 
 const init = () => {
   const state = {
     feeds: [],
-    urlValue: '',
-    urlValid: false,
+    feedUrl: '',
+    formStatus: 'empty', // empty|error|valid|disabled
     formError: '',
-    formDisabled: false,
   };
-
-  const updateState = newState => Object.assign(state, newState);
 
   const $form = $('#rss-form');
   const $list = $('#rss-list');
 
-  updateForm($form, state);
+  const updateState = newState => Object.assign(state, newState);
 
-  $form.on('input', (e) => {
+  const validateForm = () => {
     const existUrls = state.feeds.map(({ url }) => url);
-    const { value } = e.target;
-    const { valid, error } = validateUrl(value, existUrls);
+    const { valid, error } = validateUrl(state.feedUrl, existUrls);
 
     updateState({
-      urlValue: value,
-      urlValid: valid,
+      formStatus: valid ? 'valid' : 'error',
       formError: error,
     });
+  };
+
+  const loadFeed = () => axios.get(`https://crossorigin.me/${state.feedUrl}`)
+    .then(({ data }) => {
+      const rss = parseRss(data);
+      const feed = { ...rss, url: state.feedUrl };
+
+      updateState({
+        feedUrl: '',
+        formError: '',
+        formStatus: 'empty',
+        feeds: [feed, ...state.feeds],
+      });
+      updateRss($list, state.feeds);
+      updateForm($form, state);
+    })
+    .catch((err) => {
+      console.error(err);
+
+      updateState({
+        formStatus: 'error',
+        formError: 'Loading error, check url or try again later',
+      });
+      updateForm($form, state);
+    });
+
+  $form.on('input', (e) => {
+    updateState({ feedUrl: e.target.value });
+    validateForm();
     updateForm($form, state);
   });
 
   $form.on('submit', (e) => {
     e.preventDefault();
 
-    updateState({ formDisabled: true });
+    validateForm();
+
+    if (state.formStatus === 'valid') {
+      updateState({ formStatus: 'disabled' });
+      loadFeed();
+    }
+
     updateForm($form, state);
-
-    axios.get(`https://crossorigin.me/${state.urlValue}`)
-      .then(({ data }) => {
-        const rss = parseRss(data);
-        const feed = { ...rss, url: state.urlValue };
-
-        updateState({
-          urlValue: '',
-          urlValid: false,
-          formError: '',
-          formDisabled: false,
-          feeds: [feed, ...state.feeds],
-        });
-        renderRss($list, state.feeds);
-        updateForm($form, state);
-      })
-      .catch((err) => {
-        console.error(err);
-
-        updateState({
-          formDisabled: false,
-          formError: 'Loading error, check url or try again later',
-        });
-        updateForm($form, state);
-      });
   });
+
+  updateForm($form, state);
 };
 
 init();
