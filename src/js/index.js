@@ -10,10 +10,10 @@ import updateForm from './update-form';
 const init = () => {
   const state = {
     feeds: [],
-    disabled: false,
-    valid: true,
-    error: '',
-    url: '',
+    formDisabled: false,
+    formValid: true,
+    formValue: '',
+    formError: '',
   };
 
   const updateState = newState => Object.assign(state, newState);
@@ -23,27 +23,31 @@ const init = () => {
 
   $form.on('input', (e) => {
     const existUrls = state.feeds.map(({ url }) => url);
-    const url = e.target.value;
-    const { valid, error } = validateUrl(url, existUrls);
+    const { value } = e.target;
+    const { valid, error } = validateUrl(value, existUrls);
 
-    updateState({ url, valid, error });
+    updateState({
+      formValue: value,
+      formValid: valid,
+      formError: error,
+    });
     updateForm($form, state);
   });
 
   $form.on('submit', (e) => {
     e.preventDefault();
 
-    updateState({ disabled: true });
+    updateState({ formDisabled: true });
     updateForm($form, state);
 
-    axios.get(`https://crossorigin.me/${state.url}`)
+    axios.get(`https://crossorigin.me/${state.formValue}`)
       .then(({ data }) => {
         const rss = parseRss(data);
-        const feed = { ...rss, url: state.url };
+        const feed = { ...rss, url: state.formValue };
 
         updateState({
-          url: '',
-          disabled: false,
+          formValue: '',
+          formDisabled: false,
           feeds: [feed, ...state.feeds],
         });
         renderRss($list, state.feeds);
@@ -53,8 +57,8 @@ const init = () => {
         console.error(err);
 
         updateState({
-          disabled: false,
-          error: 'Loading error, check url',
+          formDisabled: false,
+          formError: 'Loading error, check url or try again later',
         });
         updateForm($form, state);
       });
