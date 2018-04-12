@@ -14,16 +14,37 @@
       <form class="row" id="rss-form">
         <div class="form-group col-md-6">
           <label for="rss-url">RSS URL</label>
-          <input type="text" name="url" class="form-control" id="rss-url" placeholder="site.com/rss">
-          <div class="invalid-feedback">Example invalid feedback text</div>
+          <input
+            id="rss-url"
+            data-selector="url-input"
+            type="text"
+            name="url"
+            class="form-control"
+            placeholder="site.com/rss"
+          >
+          <div class="invalid-feedback" data-selector="url-error">Example invalid feedback text</div>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Load RSS</button>
+          <button type="submit" class="btn btn-primary" data-selector="submit">Load RSS</button>
         </div>
       </form>
     </div>
     
     <div class="row" id="rss-list"></div>
+  </div>
+
+  <div class="modal fade" id="rss-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" data-selector="title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" data-selector="content">Modal content</div>
+      </div>
+    </div>
   </div>
 <script type="text/javascript" src="main.js"></script></body>
 </html>
