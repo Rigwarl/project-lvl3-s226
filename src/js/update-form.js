@@ -1,7 +1,7 @@
 const updateForm = ($form, { feedStatus, feedError, feedUrl }) => {
-  const $urlInput = $form.find('[name=url]');
-  const $urlError = $urlInput.next('.invalid-feedback');
-  const $submitBtn = $form.find('[type=submit]');
+  const $urlInput = $form.find('[data-selector=url-input]');
+  const $urlError = $form.find('[data-selector=url-error]');
+  const $submitBtn = $form.find('[data-selector=submit]');
 
   const inputClassName = {
     loading: '',
