@@ -1,11 +1,12 @@
 import $ from 'jquery';
 
-const parseItem = (item) => {
+const parseItem = (item, i) => {
   const $item = $(item);
 
   return {
-    title: $item.find('title').text(),
+    id: i,
     url: $item.find('link').text(),
+    title: $item.find('title').text(),
   };
 };
 

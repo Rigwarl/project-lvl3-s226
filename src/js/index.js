@@ -10,6 +10,7 @@ import updateForm from './update-form';
 const init = () => {
   const state = {
     feeds: [],
+    feedId: 0,
     feedUrl: '',
     feedError: '',
     feedStatus: 'empty', // empty|error|valid|loading
@@ -36,6 +37,7 @@ const init = () => {
       const feed = { ...rss, url: state.feedUrl };
 
       updateState({
+        feedId: state.feedId + 1,
         feedUrl: '',
         feedError: '',
         feedStatus: 'empty',
