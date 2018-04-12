@@ -32,7 +32,7 @@ const init = () => {
     });
   };
 
-  const loadFeed = () => axios.get(`https://crossorigin.me/${state.feedUrl}`)
+  const loadFeed = () => axios.get(state.feedUrl)
     .then(({ data }) => {
       const rss = parseRss(data);
       const feed = {
