@@ -7,6 +7,7 @@ const parseItem = (item, i) => {
     id: i,
     url: $item.find('link').text(),
     title: $item.find('title').text(),
+    description: $item.find('description').text(),
   };
 };
 
