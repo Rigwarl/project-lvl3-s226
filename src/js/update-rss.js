@@ -1,8 +1,8 @@
 const createItem = (feedId, { id, url, title }) =>
-  `<li>
-    <a href=${url}>${title}</a>
+  `<li class="mb-2">
+    <a href=${url} class="mr-1">${title}</a>
     <button
-      class="btn btn-primary"
+      class="btn btn-sm btn-primary"
       data-feed-id=${feedId}
       data-item-id=${id}
       data-toggle="modal"
