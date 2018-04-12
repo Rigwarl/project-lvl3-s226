@@ -34,7 +34,11 @@ const init = () => {
   const loadFeed = () => axios.get(`https://crossorigin.me/${state.feedUrl}`)
     .then(({ data }) => {
       const rss = parseRss(data);
-      const feed = { ...rss, url: state.feedUrl };
+      const feed = {
+        ...rss,
+        id: state.feedId,
+        url: state.feedUrl,
+      };
 
       updateState({
         feedId: state.feedId + 1,
