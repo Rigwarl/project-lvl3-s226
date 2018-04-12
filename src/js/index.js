@@ -18,6 +18,7 @@ const init = () => {
 
   const $form = $('#rss-form');
   const $list = $('#rss-list');
+  const $modal = $('#rss-modal');
 
   const updateState = newState => Object.assign(state, newState);
 
@@ -77,6 +78,15 @@ const init = () => {
     }
 
     updateForm($form, state);
+  });
+
+  $modal.on('show.bs.modal', (e) => {
+    const { feedId, itemId } = e.relatedTarget.dataset;
+    const { items } = state.feeds.find(({ id }) => id === +feedId);
+    const { title, description } = items.find(({ id }) => id === +itemId);
+
+    $modal.find('[data-selector=title]').text(title);
+    $modal.find('[data-selector=content]').text(description);
   });
 
   updateForm($form, state);

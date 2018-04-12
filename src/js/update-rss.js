@@ -1,17 +1,29 @@
+const createItem = (feedId, { id, url, title }) =>
+  `<li>
+    <a href=${url}>${title}</a>
+    <button
+      class="btn btn-primary"
+      data-feed-id=${feedId}
+      data-item-id=${id}
+      data-toggle="modal"
+      data-target="#rss-modal"
+    >more</button>
+  </li>`;
+
 const updateRss = ($element, rssArr) => {
-  const tabs = rssArr.map((feed, i) =>
+  const tabs = rssArr.map(({ id, title, description }, i) =>
     `<a 
       class="list-group-item list-group-item-action ${i === 0 ? 'active' : ''}"
-      href="#rss-feed-${i}"
+      href="#rss-feed-${id}"
       data-toggle="list"
     >
-      <h2 class="h5">${feed.title}</h2>
-      <div>${feed.description}</div>
+      <h2 class="h5">${title}</h2>
+      <div>${description}</div>
     </a>`).join('');
 
-  const tabPanes = rssArr.map(({ items }, i) =>
-    `<ul class="tab-pane ${i === 0 ? 'active' : ''}" id="rss-feed-${i}">
-      ${items.map(item => `<li><a href=${item.url}>${item.title}</a></li>`).join('')}
+  const tabPanes = rssArr.map(({ id, items }, i) =>
+    `<ul class="tab-pane ${i === 0 ? 'active' : ''}" id="rss-feed-${id}">
+      ${items.map(item => createItem(id, item)).join('')}
     </ul>`).join('');
 
   $element.html(`
