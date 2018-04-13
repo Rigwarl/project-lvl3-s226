@@ -32,9 +32,11 @@ const init = () => {
     });
   };
 
-  const loadFeed = () => axios.get(state.feedUrl)
-    .then(({ data }) => {
-      const rss = parseRss(data);
+  const getFeed = url => axios.get(url)
+    .then(({ data }) => parseRss(data));
+
+  const loadNewFeed = () => getFeed(state.feedUrl)
+    .then((rss) => {
       const feed = {
         ...rss,
         id: state.feedId,
@@ -61,6 +63,30 @@ const init = () => {
       updateForm($form, state);
     });
 
+  const getFeedUpdate = ({ id, url }) => getFeed(url)
+    .then(rss => ({ ...rss, id, url }))
+    .catch((err) => {
+      console.error(err);
+
+      return { id: null };
+    });
+
+  const loadFeedsUpdate = () => Promise.all(state.feeds.map(getFeedUpdate))
+    .then((newFeeds) => {
+      if (!newFeeds.length) {
+        return;
+      }
+
+      const feeds = state.feeds.map((feed) => {
+        const newFeed = newFeeds.find(({ id }) => id === feed.id);
+        return newFeed || feed;
+      });
+
+      updateState({ feeds });
+      updateRss($list, state.feeds);
+    })
+    .then(() => setTimeout(loadFeedsUpdate, 5 * 1000));
+
   $form.on('input', (e) => {
     updateState({ feedUrl: e.target.value });
     validateFeed();
@@ -74,7 +100,7 @@ const init = () => {
 
     if (state.feedStatus === 'valid') {
       updateState({ feedStatus: 'loading' });
-      loadFeed();
+      loadNewFeed();
     }
 
     updateForm($form, state);
@@ -90,6 +116,7 @@ const init = () => {
   });
 
   updateForm($form, state);
+  loadFeedsUpdate();
 };
 
 init();
