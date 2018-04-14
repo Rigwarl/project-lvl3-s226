@@ -6,6 +6,9 @@ lint:
 
 test:
 	npm test
+	
+test-update:
+	npm test -- -u
 
 start:
 	NODE_ENV=development npm run webpack-serve
