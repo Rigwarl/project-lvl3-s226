@@ -8,10 +8,12 @@ import run from '../src/js/application';
 
 const initHtml = fs.readFileSync(path.join(__dirname, '../src/template.html')).toString();
 const hexletFeed = fs.readFileSync(path.join(__dirname, './feeds/hexlet.xml')).toString();
+const sampleFeed = fs.readFileSync(path.join(__dirname, './feeds/sample.xml')).toString();
+
 const inputEvent = new Event('input', { bubbles: true });
 const getTree = () => html(document.body.innerHTML);
 
-beforeAll(() => {
+beforeEach(() => {
   document.documentElement.innerHTML = initHtml;
   run();
 });
@@ -67,3 +69,42 @@ test('form', async () => {
   expect(getTree()).toMatchSnapshot();
 });
 
+test('feeds', async () => {
+  const form = document.querySelector('#rss-form');
+  const urlInput = form.querySelector('[data-selector="url-input"]');
+  const submitBtn = form.querySelector('[data-selector="submit"]');
+
+  // loaded feed
+  axios.get.mockResolvedValue({ data: hexletFeed });
+  urlInput.value = 'hexlet.url';
+  urlInput.dispatchEvent(inputEvent);
+  submitBtn.click();
+  await timer.start(100);
+  expect(getTree()).toMatchSnapshot();
+
+  // another loaded feed
+  axios.get.mockResolvedValue({ data: sampleFeed });
+  urlInput.value = 'sample.url';
+  urlInput.dispatchEvent(inputEvent);
+  submitBtn.click();
+  await timer.start(100);
+  expect(getTree()).toMatchSnapshot();
+
+  // tab change
+  const tabLinks = document.querySelectorAll('[data-toggle="list"]');
+  tabLinks[tabLinks.length - 1].click();
+  await timer.start(100);
+  expect(getTree()).toMatchSnapshot();
+
+  // modal
+  const itemBtn = document.querySelector('[data-target="#rss-modal"]');
+  itemBtn.click();
+  await timer.start(100);
+  expect(getTree()).toMatchSnapshot();
+
+  // close modal
+  const closeBtn = document.querySelector('#rss-modal [data-dismiss="modal"]');
+  closeBtn.click();
+  await timer.start(100);
+  expect(getTree()).toMatchSnapshot();
+});
