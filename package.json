@@ -41,6 +41,7 @@
     "js-beautify": "^1.7.5",
     "style-loader": "^0.20.3",
     "surge": "^0.20.1",
+    "timer-promise": "0.0.2",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
     "webpack-serve": "^0.3.1"
