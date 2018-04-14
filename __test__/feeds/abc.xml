@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:abcnews="http://abcnews.com/content/" version="2.0">
+<channel>
+<title>ABC News: Top Stories</title>
+<link>http://abcnews.go.com/</link>
+<description/>
+<image>
+<title>ABC News: Top Stories</title>
+<url>
+https://s.abcnews.com/images/site/abcnews_google_rss_logo.png
+</url>
+<link>http://abcnews.go.com/</link>
+</image>
+<item>
+<media:thumbnail url="https://s.abcnews.com/images/International/syria-strike-damage-gty-jt-180414_hpMain_4x3t_384.jpg" width="384" height="288" credit="Louai Beshara/AFP/Getty Images"/>
+<media:thumbnail url="https://s.abcnews.com/images/International/syria-strike-damage-gty-jt-180414_hpMain_4x3t_144.jpg" width="144" height="108" credit="Louai Beshara/AFP/Getty Images"/>
+<media:thumbnail url="https://s.abcnews.com/images/International/syria-strike-damage-gty-jt-180414_hpMain_4x3t_384.jpg" width="384" height="288" credit="Louai Beshara/AFP/Getty Images"/>
+<media:thumbnail url="https://s.abcnews.com/images/International/syria-strike-damage-gty-jt-180414_hpMain_16x9t_240.jpg" width="240" height="135" credit="Louai Beshara/AFP/Getty Images"/>
+<media:thumbnail url="https://s.abcnews.com/images/International/syria-strike-damage-gty-jt-180414_hpMain_4x3_608.jpg" width="608" height="456" credit="Louai Beshara/AFP/Getty Images"/>
+<media:thumbnail url="https://s.abcnews.com/images/International/syria-strike-damage-gty-jt-180414_hpMain_16x9_992.jpg" width="992" height="558" credit="Louai Beshara/AFP/Getty Images"/>
+<media:keywords>1</media:keywords>
+<title>
+<![CDATA[
+US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+]]>
+</title>
+<link>
+<![CDATA[
+http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163
+]]>
+</link>
+<guid>
+<![CDATA[
+http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163
+]]>
+</guid>
+<pubDate>Sat, 14 Apr 2018 15:25:38 -0400</pubDate>
+<description>
+<![CDATA[
+The U.S. declared airstrikes had &quot;crippled&quot; Syria's chemical weapons program.
+]]>
+</description>
+<category>International</category>
+</item>
+<item>
+<media:thumbnail url="https://s.abcnews.com/images/Politics/syria-ap-er-180403_hpMain_4x3t_384.jpg" width="384" height="288" credit="Hussein Malla/AP"/>
+<media:thumbnail url="https://s.abcnews.com/images/Politics/syria-ap-er-180403_hpMain_4x3t_144.jpg" width="144" height="108" credit="Hussein Malla/AP"/>
+<media:thumbnail url="https://s.abcnews.com/images/Politics/syria-ap-er-180403_hpMain_4x3t_384.jpg" width="384" height="288" credit="Hussein Malla/AP"/>
+<media:thumbnail url="https://s.abcnews.com/images/Politics/syria-ap-er-180403_hpMain_16x9t_240.jpg" width="240" height="135" credit="Hussein Malla/AP"/>
+<media:thumbnail url="https://s.abcnews.com/images/Politics/syria-ap-er-180403_hpMain_4x3_608.jpg" width="608" height="456" credit="Hussein Malla/AP"/>
+<media:thumbnail url="https://s.abcnews.com/images/Politics/syria-ap-er-180403_hpMain_16x9_992.jpg" width="992" height="558" credit="Hussein Malla/AP"/>
+<media:keywords>2</media:keywords>
+<title>
+<![CDATA[ What the US is doing in Syria ]]>
+</title>
+<link>
+<![CDATA[
+http://abcnews.go.com/International/us-syria/story?id=54395637
+]]>
+</link>
+<guid>
+<![CDATA[
+http://abcnews.go.com/International/us-syria/story?id=54395637
+]]>
+</guid>
+<pubDate>Fri, 13 Apr 2018 21:57:57 -0400</pubDate>
+<description>
+<![CDATA[
+The order for U.S. missile stike on Syria has once again called attention to the presence of American troops who have operated inside Syria since early 2016.
+]]>
+</description>
+<category>International</category>
+</item>
+</channel>
+</rss>

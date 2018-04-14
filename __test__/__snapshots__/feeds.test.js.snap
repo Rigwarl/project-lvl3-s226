@@ -1,0 +1,521 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`feeds 1`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">Новые уроки на Хекслете</h2>
+                    <div>Практические уроки по программированию</div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/functional-contest-03-2015/theory_unit\\" class=\\"mr-1\\">Ареалы проживания членистоногих. Конкурс по функциональному программированию 03.2015. / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/frameworks/lessons/rails_getting_started/theory_unit\\" class=\\"mr-1\\">Rails для начинающих / Фреймворки</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/pipeline/theory_unit\\" class=\\"mr-1\\">Pipeline challenge / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"2\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`feeds 2`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action\\" href=\\"#rss-feed-1\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">ABC News: Top Stories</h2>
+                    <div></div>
+                </a>
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">Новые уроки на Хекслете</h2>
+                    <div>Практические уроки по программированию</div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane\\" id=\\"rss-feed-1\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163\\" class=\\"mr-1\\">
+
+US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-syria/story?id=54395637\\" class=\\"mr-1\\">
+ What the US is doing in Syria 
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/functional-contest-03-2015/theory_unit\\" class=\\"mr-1\\">Ареалы проживания членистоногих. Конкурс по функциональному программированию 03.2015. / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/frameworks/lessons/rails_getting_started/theory_unit\\" class=\\"mr-1\\">Rails для начинающих / Фреймворки</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/pipeline/theory_unit\\" class=\\"mr-1\\">Pipeline challenge / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"2\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`feeds 3`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action\\" href=\\"#rss-feed-1\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">ABC News: Top Stories</h2>
+                    <div></div>
+                </a>
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">Новые уроки на Хекслете</h2>
+                    <div>Практические уроки по программированию</div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane\\" id=\\"rss-feed-1\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163\\" class=\\"mr-1\\">
+
+US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-syria/story?id=54395637\\" class=\\"mr-1\\">
+ What the US is doing in Syria 
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/functional-contest-03-2015/theory_unit\\" class=\\"mr-1\\">Ареалы проживания членистоногих. Конкурс по функциональному программированию 03.2015. / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/frameworks/lessons/rails_getting_started/theory_unit\\" class=\\"mr-1\\">Rails для начинающих / Фреймворки</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/pipeline/theory_unit\\" class=\\"mr-1\\">Pipeline challenge / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"2\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade show\\" id=\\"rss-modal\\" tabindex=\\"-1\\" style=\\"padding-right: 0px; display: block;\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">
+
+                    US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+                </h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">
+
+                The U.S. declared airstrikes had &amp;quot;crippled&amp;quot; Syria's chemical weapons program.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal-backdrop fade show\\"></div>"
+`;
+
+exports[`feeds 4`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action\\" href=\\"#rss-feed-1\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">ABC News: Top Stories</h2>
+                    <div></div>
+                </a>
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">Новые уроки на Хекслете</h2>
+                    <div>Практические уроки по программированию</div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane\\" id=\\"rss-feed-1\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163\\" class=\\"mr-1\\">
+
+US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-syria/story?id=54395637\\" class=\\"mr-1\\">
+ What the US is doing in Syria 
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/functional-contest-03-2015/theory_unit\\" class=\\"mr-1\\">Ареалы проживания членистоногих. Конкурс по функциональному программированию 03.2015. / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/frameworks/lessons/rails_getting_started/theory_unit\\" class=\\"mr-1\\">Rails для начинающих / Фреймворки</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/pipeline/theory_unit\\" class=\\"mr-1\\">Pipeline challenge / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"2\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade show\\" id=\\"rss-modal\\" tabindex=\\"-1\\" style=\\"padding-right: 0px; display: block;\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">
+
+                    US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+                </h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">
+
+                The U.S. declared airstrikes had &amp;quot;crippled&amp;quot; Syria's chemical weapons program.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal-backdrop fade show\\"></div>"
+`;
+
+exports[`feeds 5`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action\\" href=\\"#rss-feed-1\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">ABC News: Top Stories</h2>
+                    <div></div>
+                </a>
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">Новые уроки на Хекслете</h2>
+                    <div>Практические уроки по программированию</div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane\\" id=\\"rss-feed-1\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163\\" class=\\"mr-1\\">
+
+US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-syria/story?id=54395637\\" class=\\"mr-1\\">
+ What the US is doing in Syria 
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/functional-contest-03-2015/theory_unit\\" class=\\"mr-1\\">Ареалы проживания членистоногих. Конкурс по функциональному программированию 03.2015. / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/frameworks/lessons/rails_getting_started/theory_unit\\" class=\\"mr-1\\">Rails для начинающих / Фреймворки</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/pipeline/theory_unit\\" class=\\"mr-1\\">Pipeline challenge / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"2\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade show\\" id=\\"rss-modal\\" tabindex=\\"-1\\" style=\\"padding-right: 0px; display: block;\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">
+
+                    US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+                </h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">
+
+                The U.S. declared airstrikes had &amp;quot;crippled&amp;quot; Syria's chemical weapons program.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal-backdrop fade show\\"></div>"
+`;
+
+exports[`feeds 6`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action\\" href=\\"#rss-feed-1\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">ABC News: Top Stories</h2>
+                    <div></div>
+                </a>
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\">Новые уроки на Хекслете</h2>
+                    <div>Практические уроки по программированию</div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane\\" id=\\"rss-feed-1\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163\\" class=\\"mr-1\\">
+
+HOT!!! US !!! is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-locked-loaded-syria-chemical-weapons-nikki-haley/story?id=54466163\\" class=\\"mr-1\\">
+
+US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"http://abcnews.go.com/International/us-syria/story?id=54395637\\" class=\\"mr-1\\">
+ What the US is doing in Syria 
+</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"1\\" data-item-id=\\"2\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/functional-contest-03-2015/theory_unit\\" class=\\"mr-1\\">Ареалы проживания членистоногих. Конкурс по функциональному программированию 03.2015. / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"0\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/frameworks/lessons/rails_getting_started/theory_unit\\" class=\\"mr-1\\">Rails для начинающих / Фреймворки</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"1\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                    <li class=\\"mb-2\\">
+                        <a href=\\"https://ru.hexlet.io/courses/main/lessons/pipeline/theory_unit\\" class=\\"mr-1\\">Pipeline challenge / Главные испытания</a>
+                        <button class=\\"btn btn-sm btn-primary\\" data-feed-id=\\"0\\" data-item-id=\\"2\\" data-toggle=\\"modal\\" data-target=\\"#rss-modal\\">more</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade show\\" id=\\"rss-modal\\" tabindex=\\"-1\\" style=\\"padding-right: 0px; display: block;\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">
+
+                    US is 'locked and loaded' if Syria uses chemical weapons again: Nikki Haley
+
+                </h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">
+
+                The U.S. declared airstrikes had &amp;quot;crippled&amp;quot; Syria's chemical weapons program.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal-backdrop fade show\\"></div>"
+`;

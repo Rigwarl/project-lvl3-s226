@@ -26,54 +26,5 @@
       <description>Цель: Написать клиент, реализующий передачу сообщений в условиях канала передачи с помехами.</description>
       <pubDate>Wed, 21 Jan 2015 08:59:51 +0000</pubDate>
     </item>
-    <item>
-      <title>Абстракция с помощью функций / PHP: Функции</title>
-      <guid isPermaLink="false">1097</guid>
-      <link>https://ru.hexlet.io/courses/php-functions/lessons/abstraction/theory_unit</link>
-      <description>Цель: Обобщить знания о функциях и познакомиться с понятием абстракции</description>
-      <pubDate>Wed, 11 Apr 2018 11:52:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>Цели пользователя / Введение в проектирование интерфейсов</title>
-      <guid isPermaLink="false">1096</guid>
-      <link>https://ru.hexlet.io/courses/intro-to-ux/lessons/user-goals/theory_unit</link>
-      <description>Цель: Разобраться в основных целях, которые ставит перед собой пользователь. Рассмотреть на примерах какого результата хочет добиться пользователь. </description>
-      <pubDate>Wed, 11 Apr 2018 09:29:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>Замыкание / PHP: Функции</title>
-      <guid isPermaLink="false">1094</guid>
-      <link>https://ru.hexlet.io/courses/php-functions/lessons/closure/theory_unit</link>
-      <description>Цель: Познакомиться с механизмом захвата переменных внутри анонимных функций</description>
-      <pubDate>Mon, 02 Apr 2018 17:14:03 +0000</pubDate>
-    </item>
-    <item>
-      <title>Полезные функции высшего порядка / PHP: Функции</title>
-      <guid isPermaLink="false">1093</guid>
-      <link>https://ru.hexlet.io/courses/php-functions/lessons/usefull-high-order-functions/theory_unit</link>
-      <description>Цель: Познакомиться с новыми функциями сторонних библиотек</description>
-      <pubDate>Fri, 30 Mar 2018 18:35:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>Агрегация (reduce) / PHP: Функции</title>
-      <guid isPermaLink="false">1092</guid>
-      <link>https://ru.hexlet.io/courses/php-functions/lessons/reduce/theory_unit</link>
-      <description>Цель: Научиться использовать функцию `array_reduce`</description>
-      <pubDate>Fri, 30 Mar 2018 18:35:25 +0000</pubDate>
-    </item>
-    <item>
-      <title>Упаковка аргументов / PHP: Функции</title>
-      <guid isPermaLink="false">1091</guid>
-      <link>https://ru.hexlet.io/courses/php-functions/lessons/splat-packing/theory_unit</link>
-      <description>Цель: Познакомиться со Splat оператором</description>
-      <pubDate>Fri, 30 Mar 2018 18:35:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>Полезные функции для работы с коллекциями / PHP: Функции</title>
-      <guid isPermaLink="false">1090</guid>
-      <link>https://ru.hexlet.io/courses/php-functions/lessons/usefull-functions/theory_unit</link>
-      <description>Цель: Познакомиться со сторонними библиотеками и некоторыми функциями из них</description>
-      <pubDate>Fri, 30 Mar 2018 18:35:20 +0000</pubDate>
-    </item>
   </channel>
 </rss>

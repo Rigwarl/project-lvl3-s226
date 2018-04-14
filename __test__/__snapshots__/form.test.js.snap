@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form 1`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\"></div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`form 2`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-invalid\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\">Invalid URL</div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\"></div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`form 3`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-invalid\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\">Empty URL</div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\"></div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`form 4`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-valid\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\"></div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`form 5`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\" disabled=\\"\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\" disabled=\\"\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\"></div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`form 6`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-invalid\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\">Loading error, check url or try again later</div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\"></div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`form 7`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\"></h2>
+                    <div></div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
+
+exports[`form 8`] = `
+"<div class=\\"container pt-md-5 pb-md-5\\">
+    <div class=\\"jumbotron\\">
+        <h1>RSS Reader</h1>
+        <hr class=\\"my-4\\">
+        <form class=\\"row\\" id=\\"rss-form\\">
+            <div class=\\"form-group col-md-6\\">
+                <label for=\\"rss-url\\">RSS URL</label>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-invalid\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\">This URL already exists</div>
+            </div>
+            <div class=\\"col-12\\">
+                <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
+            </div>
+        </form>
+    </div>
+
+    <div class=\\"row\\" id=\\"rss-list\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\">
+                <a class=\\"list-group-item list-group-item-action active\\" href=\\"#rss-feed-0\\" data-toggle=\\"list\\">
+                    <h2 class=\\"h5\\"></h2>
+                    <div></div>
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\">
+                <ul class=\\"tab-pane active\\" id=\\"rss-feed-0\\">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=\\"modal fade\\" id=\\"rss-modal\\" tabindex=\\"-1\\">
+    <div class=\\"modal-dialog modal-dialog-centered\\">
+        <div class=\\"modal-content\\">
+            <div class=\\"modal-header\\">
+                <h5 class=\\"modal-title\\" data-selector=\\"title\\">Modal title</h5>
+                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\">
+            <span>×</span>
+          </button>
+            </div>
+            <div class=\\"modal-body\\" data-selector=\\"content\\">Modal content</div>
+        </div>
+    </div>
+</div>"
+`;
