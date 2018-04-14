@@ -78,8 +78,8 @@ exports[`form 3`] = `
         <form class=\\"row\\" id=\\"rss-form\\">
             <div class=\\"form-group col-md-6\\">
                 <label for=\\"rss-url\\">RSS URL</label>
-                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-valid\\" placeholder=\\"site.com/rss\\">
-                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-invalid\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\">Empty URL</div>
             </div>
             <div class=\\"col-12\\">
                 <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
@@ -113,8 +113,8 @@ exports[`form 4`] = `
         <form class=\\"row\\" id=\\"rss-form\\">
             <div class=\\"form-group col-md-6\\">
                 <label for=\\"rss-url\\">RSS URL</label>
-                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-invalid\\" placeholder=\\"site.com/rss\\">
-                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\">Empty URL</div>
+                <input id=\\"rss-url\\" data-selector=\\"url-input\\" type=\\"text\\" name=\\"url\\" class=\\"form-control is-valid\\" placeholder=\\"site.com/rss\\">
+                <div class=\\"invalid-feedback\\" data-selector=\\"url-error\\"></div>
             </div>
             <div class=\\"col-12\\">
                 <button type=\\"submit\\" class=\\"btn btn-primary\\" data-selector=\\"submit\\">Load RSS</button>
