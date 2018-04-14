@@ -8,7 +8,7 @@ test:
 	npm test
 	
 test-update:
-	npm test -- -u
+	npm test -- --updateSnapshot
 
 start:
 	NODE_ENV=development npm run webpack-serve
