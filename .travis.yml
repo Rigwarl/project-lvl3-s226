@@ -4,7 +4,10 @@
   node_js:
     - stable
     
-  script: make lint test
+  script:
+    - make lint
+    - make types
+    - make test
     
   addons:
     code_climate:

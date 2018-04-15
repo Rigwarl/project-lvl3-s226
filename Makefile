@@ -3,6 +3,9 @@ install:
 
 lint:
 	npm run eslint -- .
+	
+types:
+	npm run flow
 
 test:
 	npm test
