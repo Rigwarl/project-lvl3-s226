@@ -1,5 +1,8 @@
 {
-  "presets": ["flow", "env"],
+  "presets": [
+    "flow",
+    ["env", { "useBuiltIns": true }]
+  ],
   "plugins": [
     ["transform-object-rest-spread", { "useBuiltIns": true }]
   ]

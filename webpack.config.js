@@ -4,6 +4,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
 
   entry: [
+    'babel-polyfill',
     './src/style.css',
     './src/js/index.js',
   ],
