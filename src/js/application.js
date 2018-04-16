@@ -5,34 +5,14 @@ import $ from 'jquery';
 import axios from 'axios';
 
 import parseRss from './parse-rss';
-import updateRss from './update-rss';
+import updateFeeds from './update-feeds';
 import validateUrl from './validate-url';
 import updateForm from './update-form';
 
-type FeedItem = {
-  id: number,
-  url: string,
-  title: string,
-  description: string,
-};
+import type { Feed, ParsedFeed } from './types/Feed';
+import type { State } from './types/State';
 
-type Feed = {
-  id: number,
-  url: string,
-  items: FeedItem[],
-  title: string,
-  description: string,
-};
-
-type State = {
-  feeds: Feed[],
-  feedId: number,
-  feedUrl: string,
-  feedError: string,
-  feedStatus: 'empty' | 'error' | 'valid' | 'loading',
-};
-
-export default () => {
+export default (): void => {
   const state: State = {
     feeds: [],
     feedId: 0,
@@ -45,9 +25,9 @@ export default () => {
   const $list = $('#rss-list');
   const $modal = $('#rss-modal');
 
-  const updateState = newState => Object.assign(state, newState);
+  const updateState = (newState): State => Object.assign(state, newState);
 
-  const validateFeed = () => {
+  const validateFeed = (): void => {
     const existUrls = state.feeds.map(({ url }) => url);
     const { valid, error } = validateUrl(state.feedUrl, existUrls);
 
@@ -57,11 +37,11 @@ export default () => {
     });
   };
 
-  const getFeed = url => axios.get(url)
-    .then(({ data }) => parseRss(data));
+  const getFeed = (url): Promise<ParsedFeed> => axios.get(url)
+    .then(({ data }): ParsedFeed => parseRss(data));
 
-  const loadNewFeed = () => getFeed(state.feedUrl)
-    .then((rss) => {
+  const loadNewFeed = (): Promise<void> => getFeed(state.feedUrl)
+    .then((rss): void => {
       const feed = {
         ...rss,
         id: state.feedId,
@@ -75,10 +55,10 @@ export default () => {
         feedStatus: 'empty',
         feeds: [feed, ...state.feeds],
       });
-      updateRss($list, state.feeds);
+      updateFeeds($list, state.feeds);
       updateForm($form, state);
     })
-    .catch((err) => {
+    .catch((err): void => {
       console.error(err);
 
       updateState({
@@ -88,37 +68,33 @@ export default () => {
       updateForm($form, state);
     });
 
-  const getFeedUpdate = ({ id, url }) => getFeed(url)
-    .then(rss => ({ ...rss, id, url }))
-    .catch((err) => {
-      console.error(err);
+  const getFeedUpdate = ({ id, url }): Promise<?Feed> => getFeed(url)
+    .then((rss): Feed => ({ ...rss, id, url }))
+    .catch((err): void => console.error(err));
 
-      return { id: null };
-    });
-
-  const loadFeedsUpdate = () => Promise.all(state.feeds.map(getFeedUpdate))
-    .then((newFeeds) => {
+  const loadFeedsUpdate = (): Promise<TimeoutID> => Promise.all(state.feeds.map(getFeedUpdate))
+    .then((newFeeds): void => {
       if (!newFeeds.length) {
         return;
       }
 
-      const feeds = state.feeds.map((feed) => {
-        const newFeed = newFeeds.find(({ id }) => id === feed.id);
+      const feeds = state.feeds.map((feed): Feed => {
+        const newFeed = newFeeds.find((f): boolean => !!f && f.id === feed.id);
         return newFeed || feed;
       });
 
       updateState({ feeds });
-      updateRss($list, state.feeds);
+      updateFeeds($list, state.feeds);
     })
-    .then(() => setTimeout(loadFeedsUpdate, 5 * 1000));
+    .then((): TimeoutID => setTimeout(loadFeedsUpdate, 5 * 1000));
 
-  $form.on('input', (e) => {
+  $form.on('input', (e): void => {
     updateState({ feedUrl: e.target.value });
     validateFeed();
     updateForm($form, state);
   });
 
-  $form.on('submit', (e) => {
+  $form.on('submit', (e): void => {
     e.preventDefault();
 
     validateFeed();
@@ -131,13 +107,13 @@ export default () => {
     updateForm($form, state);
   });
 
-  $modal.on('show.bs.modal', (e) => {
+  $modal.on('show.bs.modal', (e): void => {
     const { feedId, itemId } = e.relatedTarget.dataset;
-    const feed = state.feeds.find(({ id }) => id === +feedId);
+    const feed = state.feeds.find(({ id }): boolean => id === +feedId);
 
     if (!feed) { return; }
 
-    const item = feed.items.find(({ id }) => id === +itemId);
+    const item = feed.items.find(({ id }): boolean => id === +itemId);
 
     if (!item) { return; }
 

@@ -1,4 +1,8 @@
-const createItem = (feedId, { id, url, title }) =>
+// @flow
+
+import type { Feed } from './types/Feed';
+
+const createItem = (feedId, { id, url, title }): string =>
   `<li class="mb-2">
     <a href=${url} class="mr-1">${title}</a>
     <button
@@ -10,8 +14,8 @@ const createItem = (feedId, { id, url, title }) =>
     >more</button>
   </li>`;
 
-const updateRss = ($element, rssArr) => {
-  const tabs = rssArr.map(({ id, title, description }) =>
+const updateRss = ($element, feedsArr: Feed[]): void => {
+  const tabs = feedsArr.map(({ id, title, description }): string =>
     `<a 
       class="list-group-item list-group-item-action"
       href="#rss-feed-${id}"
@@ -21,7 +25,7 @@ const updateRss = ($element, rssArr) => {
       <div>${description}</div>
     </a>`).join('');
 
-  const tabPanes = rssArr.map(({ id, items }) =>
+  const tabPanes = feedsArr.map(({ id, items }): string =>
     `<ul class="tab-pane" id="rss-feed-${id}">
       ${items.map(item => createItem(id, item)).join('')}
     </ul>`).join('');

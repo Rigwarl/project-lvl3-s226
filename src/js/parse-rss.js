@@ -1,6 +1,10 @@
+// @flow
+
 import $ from 'jquery';
 
-const parseItem = (item, i) => {
+import type { ParsedFeed, FeedItem } from './types/Feed';
+
+const parseItem = (item, i): FeedItem => {
   const $item = $(item);
 
   return {
@@ -11,9 +15,9 @@ const parseItem = (item, i) => {
   };
 };
 
-const parseRss = (string) => {
+const parseRss = (rss: string): ParsedFeed => {
   const parser = new DOMParser();
-  const xml = parser.parseFromString(string, 'application/xml');
+  const xml = parser.parseFromString(rss, 'application/xml');
   const $xml = $(xml);
 
   return {

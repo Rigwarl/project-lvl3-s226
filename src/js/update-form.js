@@ -1,4 +1,8 @@
-const updateForm = ($form, { feedStatus, feedError, feedUrl }) => {
+// @flow
+
+import type { State } from './types/State';
+
+const updateForm = ($form, { feedStatus, feedError, feedUrl }: State): void => {
   const $urlInput = $form.find('[data-selector=url-input]');
   const $urlError = $form.find('[data-selector=url-error]');
   const $submitBtn = $form.find('[data-selector=submit]');

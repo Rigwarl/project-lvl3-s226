@@ -1,6 +1,8 @@
+// @flow
+
 import isURL from 'validator/lib/isURL';
 
-const validateUrl = (url, existUrls) => {
+const validateUrl = (url: string, existUrls: string[]): { valid: boolean, error: string } => {
   if (url === '') {
     return {
       valid: false,
