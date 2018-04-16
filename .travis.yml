@@ -6,7 +6,8 @@
     
   script:
     - make lint
-    - make types
+    - make install-types
+    - make check-types
     - make test
     
   addons:

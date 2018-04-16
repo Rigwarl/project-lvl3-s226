@@ -1,11 +1,17 @@
 install:
+	make install-deps
+	make install-types
+	
+install-deps:
 	npm install
+
+install-types:
 	npm run flow-typed install
 
 lint:
 	npm run eslint -- .
 	
-types:
+check-types:
 	npm run flow
 
 test:
