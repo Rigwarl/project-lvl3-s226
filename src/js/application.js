@@ -37,16 +37,25 @@ export default (): void => {
     });
   };
 
-  const getFeed = (url): Promise<ParsedFeed> => axios.get(url)
-    .then(({ data }): ParsedFeed => parseRss(data));
+  const getFeed = async (url): Promise<ParsedFeed> => {
+    const { data } = await axios.get(url);
 
-  const loadNewFeed = (): Promise<void> => getFeed(state.feedUrl)
-    .then((rss): void => {
-      const feed = {
-        ...rss,
-        id: state.feedId,
-        url: state.feedUrl,
-      };
+    return parseRss(data);
+  };
+
+  const getNewFeed = async (): Promise<Feed> => {
+    const parsedFeed = await getFeed(state.feedUrl);
+
+    return {
+      ...parsedFeed,
+      id: state.feedId,
+      url: state.feedUrl,
+    };
+  };
+
+  const loadNewFeed = async (): Promise<void> => {
+    try {
+      const feed = await getNewFeed();
 
       updateState({
         feedId: state.feedId + 1,
@@ -57,34 +66,41 @@ export default (): void => {
       });
       updateFeeds($list, state.feeds);
       updateForm($form, state);
-    })
-    .catch((err): void => {
+    } catch (err) {
       console.error(err);
 
       updateState({
         feedStatus: 'error',
         feedError: 'Loading error, check url or try again later',
       });
-      updateForm($form, state);
+    }
+  };
+
+  const getFeedUpdate = async ({ id, url }): Promise<?Feed> => {
+    try {
+      const parsedFeed = await getFeed(url);
+
+      return { ...parsedFeed, id, url };
+    } catch (err) {
+      console.error(err);
+
+      return null;
+    }
+  };
+
+  const loadFeedsUpdate = async (): Promise<void> => {
+    const newFeeds = await Promise.all(state.feeds.map(getFeedUpdate));
+
+    const feeds = state.feeds.map((feed): Feed => {
+      const newFeed = newFeeds.find((f): boolean => !!f && f.id === feed.id);
+      return newFeed || feed;
     });
 
-  const getFeedUpdate = ({ id, url }): Promise<?Feed> => getFeed(url)
-    .then((rss): Feed => ({ ...rss, id, url }))
-    .catch((err): void => console.error(err));
+    updateState({ feeds });
+    updateFeeds($list, state.feeds);
 
-  const loadFeedsUpdate = (): Promise<TimeoutID> => Promise.all(state.feeds.map(getFeedUpdate))
-    .then((newFeeds): void => {
-      if (!newFeeds.length) { return; }
-
-      const feeds = state.feeds.map((feed): Feed => {
-        const newFeed = newFeeds.find((f): boolean => !!f && f.id === feed.id);
-        return newFeed || feed;
-      });
-
-      updateState({ feeds });
-      updateFeeds($list, state.feeds);
-    })
-    .then((): TimeoutID => setTimeout(loadFeedsUpdate, 5 * 1000));
+    setTimeout(loadFeedsUpdate, 5 * 1000);
+  };
 
   $form.on('input', (e): void => {
     if (!(e.target instanceof HTMLInputElement)) { return; }
