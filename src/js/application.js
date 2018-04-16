@@ -1,3 +1,5 @@
+// @flow
+
 import 'bootstrap';
 import $ from 'jquery';
 import axios from 'axios';
@@ -7,13 +9,36 @@ import updateRss from './update-rss';
 import validateUrl from './validate-url';
 import updateForm from './update-form';
 
+type FeedItem = {
+  id: number,
+  url: string,
+  title: string,
+  description: string,
+};
+
+type Feed = {
+  id: number,
+  url: string,
+  items: FeedItem[],
+  title: string,
+  description: string,
+};
+
+type State = {
+  feeds: Feed[],
+  feedId: number,
+  feedUrl: string,
+  feedError: string,
+  feedStatus: 'empty' | 'error' | 'valid' | 'loading',
+};
+
 export default () => {
-  const state = {
+  const state: State = {
     feeds: [],
     feedId: 0,
     feedUrl: '',
     feedError: '',
-    feedStatus: 'empty', // empty|error|valid|loading
+    feedStatus: 'empty',
   };
 
   const $form = $('#rss-form');
@@ -108,11 +133,16 @@ export default () => {
 
   $modal.on('show.bs.modal', (e) => {
     const { feedId, itemId } = e.relatedTarget.dataset;
-    const { items } = state.feeds.find(({ id }) => id === +feedId);
-    const { title, description } = items.find(({ id }) => id === +itemId);
+    const feed = state.feeds.find(({ id }) => id === +feedId);
 
-    $modal.find('[data-selector=title]').text(title);
-    $modal.find('[data-selector=content]').text(description);
+    if (!feed) { return; }
+
+    const item = feed.items.find(({ id }) => id === +itemId);
+
+    if (!item) { return; }
+
+    $modal.find('[data-selector=title]').text(item.title);
+    $modal.find('[data-selector=content]').text(item.description);
   });
 
   updateForm($form, state);
