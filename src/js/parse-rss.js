@@ -15,9 +15,9 @@ const parseItem = (item, i): FeedItem => {
   };
 };
 
-const parseRss = (rss: string): ParsedFeed => {
+const parseRss = (xmlString: string): ParsedFeed => {
   const parser = new DOMParser();
-  const xml = parser.parseFromString(rss, 'application/xml');
+  const xml = parser.parseFromString(xmlString, 'application/xml');
   const $xml = $(xml);
 
   return {
