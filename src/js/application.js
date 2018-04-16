@@ -73,6 +73,7 @@ export default (): void => {
         feedStatus: 'error',
         feedError: 'Loading error, check url or try again later',
       });
+      updateForm($form, state);
     }
   };
 
