@@ -74,9 +74,7 @@ export default (): void => {
 
   const loadFeedsUpdate = (): Promise<TimeoutID> => Promise.all(state.feeds.map(getFeedUpdate))
     .then((newFeeds): void => {
-      if (!newFeeds.length) {
-        return;
-      }
+      if (!newFeeds.length) { return; }
 
       const feeds = state.feeds.map((feed): Feed => {
         const newFeed = newFeeds.find((f): boolean => !!f && f.id === feed.id);
@@ -89,6 +87,8 @@ export default (): void => {
     .then((): TimeoutID => setTimeout(loadFeedsUpdate, 5 * 1000));
 
   $form.on('input', (e): void => {
+    if (!(e.target instanceof HTMLInputElement)) { return; }
+
     updateState({ feedUrl: e.target.value });
     validateFeed();
     updateForm($form, state);
@@ -108,6 +108,8 @@ export default (): void => {
   });
 
   $modal.on('show.bs.modal', (e): void => {
+    if (!(e.relatedTarget instanceof HTMLElement)) { return; }
+
     const { feedId, itemId } = e.relatedTarget.dataset;
     const feed = state.feeds.find(({ id }): boolean => id === +feedId);
 

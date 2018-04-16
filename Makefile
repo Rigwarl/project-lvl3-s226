@@ -1,5 +1,6 @@
 install:
 	npm install
+	npm run flow-typed install
 
 lint:
 	npm run eslint -- .

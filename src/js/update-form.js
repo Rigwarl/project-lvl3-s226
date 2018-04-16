@@ -2,7 +2,7 @@
 
 import type { State } from './types/State';
 
-const updateForm = ($form, { feedStatus, feedError, feedUrl }: State): void => {
+const updateForm = ($form: JQuery, { feedStatus, feedError, feedUrl }: State): void => {
   const $urlInput = $form.find('[data-selector=url-input]');
   const $urlError = $form.find('[data-selector=url-error]');
   const $submitBtn = $form.find('[data-selector=submit]');
@@ -14,7 +14,8 @@ const updateForm = ($form, { feedStatus, feedError, feedUrl }: State): void => {
     error: 'is-invalid',
   }[feedStatus];
 
-  $urlInput.removeClass(['is-valid', 'is-invalid']);
+  $urlInput.removeClass('is-valid');
+  $urlInput.removeClass('is-invalid');
   $urlInput.addClass(inputClassName);
 
   $urlInput.prop('disabled', feedStatus === 'loading');

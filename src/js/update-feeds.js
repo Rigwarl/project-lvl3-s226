@@ -14,7 +14,7 @@ const createItem = (feedId, { id, url, title }): string =>
     >more</button>
   </li>`;
 
-const updateRss = ($element, feedsArr: Feed[]): void => {
+const updateRss = ($element: JQuery, feedsArr: Feed[]): void => {
   const tabs = feedsArr.map(({ id, title, description }): string =>
     `<a 
       class="list-group-item list-group-item-action"
