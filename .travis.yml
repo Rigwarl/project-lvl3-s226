@@ -5,9 +5,9 @@
     - stable
     
   script:
-    - make lint
     - make install-types
     - make check-types
+    - make lint
     - make test
     
   addons:
