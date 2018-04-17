@@ -1,22 +1,22 @@
 // @flow
 
-export type FeedItem = {
+export type FeedItem = {|
   id: number,
   url: string,
   title: string,
   description: string,
-};
+|};
 
-export type ParsedFeed = {
+export type ParsedFeed = {|
   title: string,
   description: string,
   items: FeedItem[],
-};
+|};
 
-export type Feed = {
+export type Feed = {|
   id: number,
   url: string,
   title: string,
   description: string,
   items: FeedItem[],
-};
+|};
